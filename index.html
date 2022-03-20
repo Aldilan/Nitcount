@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon">
+    <title>Nitcount</title>
 </head>
 <body>
-    <div class="">
-        <nav class="w-full h-auto fixed top-0 z-50 bg-[#393E46]">
+    <div class="min-w-full">
+        <nav class="min-w-full h-auto fixed top-0 z-50 bg-[#393E46]">
             <ul class="flex justify-around">
                 <li class=" p-4 group transition hover:bg-[#00ADB5]"><img class="w-6 h-6 group-hover:brightness-0 group-hover:invert cursor-pointer" src="public/img/sun.png" alt="sun" id="mode"></li>
                 <li class=" p-4 group transition hover:bg-[#00ADB5]"><img class="w-6 h-6 group-hover:brightness-0 group-hover:invert cursor-pointer brightness-0 invert" src="public/img/calculator.png" alt="calculator" id="navbarButton"></li>
@@ -18,8 +19,8 @@
                 <li class=" p-4 group transition hover:bg-[#00ADB5]"><img class="w-6 h-6 group-hover:brightness-0 group-hover:invert cursor-pointer" src="public/img/info.png" alt="info" id="navbarButton"></li>
             </ul>
         </nav>
-        <div class="container container-1">
-            <div class="w-full bg-[#EEEEEE] h-[50vh] border-[12px] border-[#eeeeee] dark:border-[#393E46] dark:bg-[#393E46] relative">
+        <div class="container container-1 min-w-full">
+            <div class="w-full bg-[#EEEEEE] h-[50vh] border-[12px] border-[#eeeeee] dark:border-[#393E46] dark:bg-[#393E46] relative transition">
                 <ul class="absolute bottom-0 right-0 w-full h-auto overflow-x-scroll bg-scroll text-right">
                     <li class="font-cabin text-gray-400 text-xl" id="historyPage">Count here</li>
                     <li class="font-cabin font-semibold text-[#393E46] dark:text-[#eeeeee] text-3xl" id="resultPage"></li>
@@ -88,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <div class="container container-2 hidden">
+        <div class="container container-2 hidden min-w-full">
             <div class="w-full bg-[rgb(238,238,238)] h-[100vh] border-[#eeeeee] grid grid-cols-1" id="moneyMenu">
                 <div class="w-full bg-[#EEEEEE] hover:bg-[#222831] cursor-pointer group transition dark:bg-[#222831] dark:hover:bg-[#EEEEEE]">
                     <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold text-[#222831] group-hover:text-[#EEEEEE] dark:text-[#EEEEEE] dark:group-hover:text-[#222831]" value="discount">Calculate discount</div>
@@ -100,72 +101,72 @@
                     <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold text-[#222831] group-hover:text-[#EEEEEE] dark:text-[#EEEEEE] dark:group-hover:text-[#222831]" value="interest">Calculate interest</div>
                 </div>
             </div>
-            <div class="w-full bg-[#eeeeee] h-[100vh] discount hidden" id="moneyPage" value="discount">
+            <div class="w-full bg-[#eeeeee] dark:bg-[#222831] h-[100vh] discount hidden transition" id="moneyPage" value="discount">
                 <table class="w-[90%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Original price</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Original price</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Discount (% off)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Discount (% off)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Final price</td>
-                        <td class="text-right"><span class="text-right font-semibold" id="finalPriceDiscount"></span></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Final price</td>
+                        <td class="text-right"><span class="text-right font-semibold text-[#222831] dark:text-[#eeeeee]" id="finalPriceDiscount"></span></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-center font-thin" colspan="2">You save <span class="font-normal" id="saveDiscount"></span></td>
+                        <td class="py-4 text-center font-thin text-[#222831] dark:text-[#eeeeee]" colspan="2">You save <span class="font-normal" id="saveDiscount"></span></td>
                     </tr>
                 </table>
-                <div class="text-xs font-thin absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer" id="backMoney">Back</div>
+                <div class="hover:underline text-xs font-thin absolute bottom-3 left-1/2 -translate-x-1/2 cursor-pointer text-[#222831] dark:text-[#eeeeee]" id="backMoney">BACK</div>
             </div>
-            <div class="w-full bg-[#eeeeee] h-[100vh] tax hidden" id="moneyPage" value="tax">
+            <div class="w-full bg-[#eeeeee] dark:bg-[#222831] h-[100vh] tax hidden transition" id="moneyPage" value="tax">
                 <table class="w-[90%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Original price</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Original price</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Tax (% off)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Tax (% off)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Final price</td>
-                        <td class="text-right"><span class="text-right font-semibold" id="finalPriceTax"></span></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Final price</td>
+                        <td class="text-right"><span class="text-right font-semibold text-[#222831] dark:text-[#eeeeee]" id="finalPriceTax"></span></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-center font-thin" colspan="2">Tax <span class="font-normal" id="totalTax"></span></td>
+                        <td class="py-4 text-center font-thin text-[#222831] dark:text-[#eeeeee]" colspan="2">Tax <span class="font-normal" id="totalTax"></span></td>
                     </tr>
                 </table>
-                <div class="text-xs font-thin absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer" id="backMoney">Back</div>
+                <div class="hover:underline text-xs font-thin absolute bottom-3 left-1/2 -translate-x-1/2 cursor-pointer text-[#222831] dark:text-[#eeeeee]" id="backMoney">BACK</div>
             </div>
-            <div class="w-full bg-[#eeeeee] h-[100vh] interest hidden" id="moneyPage" value="interest">
+            <div class="w-full bg-[#eeeeee] dark:bg-[#222831] h-[100vh] interest hidden transition" id="moneyPage" value="interest">
                 <table class="w-[90%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Original price</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Original price</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Interest (% off)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Interest (% off)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">How long (month)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">How long (month)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Final price</td>
-                        <td class="text-right"><span class="text-right font-semibold" id="finalPriceInterest"></span></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Final price</td>
+                        <td class="text-right"><span class="text-right font-semibold text-[#222831] dark:text-[#eeeeee]" id="finalPriceInterest"></span></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-center font-thin" colspan="2">Interest <span class="font-normal" id="totalInterest"></span></td>
+                        <td class="py-4 text-center font-thin text-[#222831] dark:text-[#eeeeee]" colspan="2">Interest <span class="font-normal" id="totalInterest"></span></td>
                     </tr>
                 </table>
-                <div class="text-xs font-thin absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer" id="backMoney">Back</div>
+                <div class="hover:underline text-xs font-thin absolute bottom-3 left-1/2 -translate-x-1/2 cursor-pointer text-[#222831] dark:text-[#eeeeee]" id="backMoney">BACK</div>
             </div>
         </div>
-        <div class="container container-3 hidden">
+        <div class="container container-3 hidden min-w-full">
             <div class="w-full bg-[rgb(238,238,238)] h-[100vh] border-[#eeeeee] grid grid-cols-1" id="otherMenu">
                 <div class="w-full bg-[#EEEEEE] hover:bg-[#222831] cursor-pointer group transition dark:bg-[#222831] dark:hover:bg-[#EEEEEE]">
                     <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold text-[#222831] group-hover:text-[#EEEEEE] dark:text-[#EEEEEE] dark:group-hover:text-[#222831]" value="bmi">Calculate BMI</div>
@@ -174,94 +175,31 @@
                     <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold text-[#222831] group-hover:text-[#EEEEEE] dark:text-[#EEEEEE] dark:group-hover:text-[#222831]">-SOON-</div>
                 </div>
             </div>
-            <div class="w-full bg-[#eeeeee] h-[100vh] bmi hidden" id="otherPage" value="bmi">
+            <div class="w-full bg-[#eeeeee] dark:bg-[#222831] h-[100vh] bmi hidden transition" id="otherPage" value="bmi">
                 <table class="w-[90%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Weight (kg)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Weight (kg)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Height (cm)</td>
-                        <td class="text-right"><input class="text-right font-semibold text-[#222831] bg-[#eeeeee]" type="number" value="" placeholder="0"></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Height (cm)</td>
+                        <td class="text-right"><input class="text-right font-semibold text-[#222831] dark:text-[#eeeeee] bg-[#eeeeee] dark:bg-[#222831] transition" type="number" value="" placeholder="0"></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-left font-bold text-[#222831]">Your BMI</td>
-                        <td class="text-right"><span class="text-right font-semibold" id="finalBmi"></span></td>
+                        <td class="py-4 text-left font-bold text-[#222831] dark:text-[#eeeeee]">Your BMI</td>
+                        <td class="text-right"><span class="text-right font-semibold text-[#222831] dark:text-[#eeeeee]" id="finalBmi"></span></td>
                     </tr>
                     <tr>
-                        <td class="py-4 text-center font-thin" colspan="2">Your category <span class="font-normal" id="categoryBmi"></span></td>
+                        <td class="py-4 text-center font-thin text-[#222831] dark:text-[#eeeeee]" colspan="2">Your category <span class="font-normal" id="categoryBmi"></span></td>
                     </tr>
                 </table>
-                <div class="text-xs font-thin absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer" id="backOther">Back</div>
+                <div class="hover:underline text-xs font-thin absolute bottom-3 left-1/2 -translate-x-1/2 cursor-pointer text-[#222831] dark:text-[#eeeeee]" id="backOther">BACK</div>
             </div>
         </div>
-        <div class="container container-4 hidden">
-            <div class="w-full bg-[#EEEEEE] h-[50vh] border-[12px] border-[#eeeeee] relative">
-                <ul class="absolute bottom-0 right-0 w-full h-auto overflow-x-scroll bg-scroll text-right">
-                    <li class="font-cabin text-gray-400 text-xl" id="historyPage">Count here</li>
-                    <li class="font-cabin font-semibold text-3xl" id="resultPage"></li>
-                </ul>
-            </div>
-            <div class="w-full h-[50vh] bg-blue-300 grid grid-cols-4" id="calc">
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer" id="resetButton">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold">AC</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer group">
-                    <div class="relative top-1/2 -translate-y-1/2 font-bold"><img src="public/img/delete.png" class="mx-auto w-5 h-5 group-hover:brightness-0 group-hover:invert" id="deleteButton" alt="delete"></div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" value="%" id="operationButton">%</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" value="/" id="operationButton">÷</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">7</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">8</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">9</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" value="*" id="operationButton">×</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">4</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">5</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">6</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" value="-" id="operationButton">-</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">1</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">2</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">3</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" value="+" id="operationButton">+</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer group" id="moreButton">
-                    <div class="relative top-1/2 -translate-y-1/2 font-bold"><img src="public/img/more.png" class="mx-auto w-5 h-5 group-hover:brightness-0 group-hover:invert" alt="more"></div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">0</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#222831] transition text-[#EEEEEE] hover:text-[#00ADB5] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-semibold" id="numberButton">.</div>
-                </div>
-                <div class="bg-[#393E46] hover:bg-[#00ADB5] transition text-[#00ADB5] hover:text-[#eeeeee] cursor-pointer">
-                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold" id="equalToButton">=</div>
+        <div class="container container-4 hidden min-w-full">
+            <div class="w-full bg-[rgb(238,238,238)] h-[100vh] border-[#eeeeee] grid grid-cols-1" id="otherMenu">
+                <div class="w-full bg-[#EEEEEE] hover:bg-[#222831] cursor-pointer group transition dark:bg-[#222831] dark:hover:bg-[#EEEEEE]">
+                    <div class="text-center relative top-1/2 -translate-y-1/2 text-md font-bold text-[#222831] group-hover:text-[#EEEEEE] dark:text-[#EEEEEE] dark:group-hover:text-[#222831]"><a href="https://github.com/Aldilan">My GitHub</a></div>
                 </div>
             </div>
         </div>

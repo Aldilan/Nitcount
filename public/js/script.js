@@ -70,10 +70,9 @@ let histo = ''
 
 numberButtons.forEach(function (numberButton) {
     numberButton.parentElement.addEventListener('click', function (e) {
-        if (resultPage.textContent == 0) {
+        if (resultPage.textContent == '0') {
             subNumbers[subNumbers.length-1] = '0'
         }
-        console.log(resultPage.textContent)
         if (numbers.length > countArrayOperation && subNumbers != '') {
             subNumbers.push(numberButton.textContent)
             resultPage.textContent += numberButton.textContent
@@ -88,10 +87,7 @@ numberButtons.forEach(function (numberButton) {
 })
 
 operationButtons.forEach(function (operationButton) {
-    operationButton.parentElement.addEventListener('click', function (e) {
-        if (subNumbers >= 1) {
-            numbers[0] = subNumbers
-        }
+    operationButton.addEventListener('click', function (e) {
         if (numbers.length != countArrayOperation) {
             if (hasOperation == false) {
                 subNumbers = []
@@ -111,7 +107,6 @@ function countTotal() {
             let historyCount = ''
             for (let i = 0; i <= numbers.length; i++) {
                 if (i == numbers.length) {
-                    console.log(total)
                     historyCount = eval(total)
                     total = '= '+eval(total)
                 }else if(i == 0){
@@ -129,9 +124,6 @@ function countTotal() {
 setInterval(countTotal,100)
 
 deleteButton.parentElement.addEventListener('click', function (e) {
-    if (subNumbers >= 1) {
-        numbers[0] = subNumbers
-    }
     if (numbers.length != 0) {
         if (numbers.length > operations.length) {
             subNumberNow = subNumbers[subNumbers.length-1]

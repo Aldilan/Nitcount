@@ -536,6 +536,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 50%;
 }
 
+.bottom-3{
+  bottom: 0.75rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -581,18 +585,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
-.h-\[20vh\]{
-  height: 20vh;
-}
-
-.h-\[30vh\]{
-  height: 30vh;
-}
-
-.h-\[80vh\]{
-  height: 80vh;
-}
-
 .w-full{
   width: 100%;
 }
@@ -607,6 +599,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[90\%\]{
   width: 90%;
+}
+
+.min-w-full{
+  min-width: 100%;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .-translate-y-1\/2{
@@ -671,11 +671,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#eeeeee\]{
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#222831\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 40 49 / var(--tw-bg-opacity));
 }
 
 .bg-scroll{
@@ -801,6 +796,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(0 173 181 / var(--tw-text-opacity));
 }
 
+.hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 .group:hover .group-hover\:text-\[\#EEEEEE\]{
   --tw-text-opacity: 1;
   color: rgb(238 238 238 / var(--tw-text-opacity));
@@ -829,6 +829,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:bg-\[\#222831\]{
   --tw-bg-opacity: 1;
   background-color: rgb(34 40 49 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-\[\#222821\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 40 33 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-\[\#eeeeee\]{
