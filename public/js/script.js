@@ -153,7 +153,7 @@ equalToButton.parentElement.addEventListener('click', function (e) {
         historyPage.innerHTML = ' '
         countArrayOperation = 0
         countOperation = 0
-        numbers = []
+        numbers = [histo]
         subNumbers = []
         operations = []
         hasOperation = false

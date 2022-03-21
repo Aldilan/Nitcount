@@ -585,12 +585,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
-.w-full{
-  width: 100%;
-}
-
 .w-6{
   width: 1.5rem;
+}
+
+.w-full{
+  width: 100%;
 }
 
 .w-5{
@@ -603,10 +603,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .min-w-full{
   min-width: 100%;
-}
-
-.max-w-full{
-  max-width: 100%;
 }
 
 .-translate-y-1\/2{
@@ -829,11 +825,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:bg-\[\#222831\]{
   --tw-bg-opacity: 1;
   background-color: rgb(34 40 49 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-\[\#222821\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 40 33 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-\[\#eeeeee\]{
